@@ -89,6 +89,15 @@ origin  git@github.com:LittleBreak/lerna-best-practices.git (push)
 lerna publish
 ```
 
+```bash
+# force publish all packages
+lerna publish --force-publish=*
+```
+
+```bash
+lerna publish --repo-version 1.0.1
+```
+
 实际上在执行该条命令的时候，lerna会做很多的工作。
 
 ```bash
