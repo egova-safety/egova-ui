@@ -86,11 +86,11 @@ module.exports = {
 
     // 第三方插件配置 https://www.npmjs.com/package/vue-cli-plugin-style-resources-loader
     pluginOptions: {
-        'style-resources-loader': {
-            preProcessor: 'less',
-            patterns: [
-                path.resolve(__dirname, './src/assets/styles/index.less')
-            ]
-        }
+        // 'style-resources-loader': {
+        //     preProcessor: 'less',
+        //     patterns: [
+        //         path.resolve(__dirname, './src/assets/styles/index.less')
+        //     ]
+        // }
     }
 };

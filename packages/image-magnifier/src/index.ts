@@ -1,1 +1,1 @@
-export { default } from "./image-magnifier";
+export { default } from "./components/image-magnifier";

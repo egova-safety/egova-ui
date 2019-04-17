@@ -1,17 +1,22 @@
 import { component, config, watch, Component } from "../decorator";
 import "./brand-picker.less";
 import { BRAND_PICKER_OPTION } from "./brand-picker-options";
-import Service from "./service";
+import axios from "axios";
+
 @component({
     template: require("./brand-picker.html")
 })
 export default class BrandSelector extends Component {
     // 组件是否可见
     public visible: Boolean = false;
+
+    @config()
+    public headers: Object;
+
     // 初始化车辆品牌组件--哪一个品牌被默认选中
     @config({ default: BRAND_PICKER_OPTION.initBrandCode })
     public initBrandCode: String;
-    
+
     @config({ default: BRAND_PICKER_OPTION.position })
     public position: String;
     // 按钮的样式
@@ -108,7 +113,8 @@ export default class BrandSelector extends Component {
     // 获取车辆品牌数据信息的方法
     protected async getBrandList() {
         try {
-            let res = await Service.prototype.getVehicleBrandList();
+            let headers = this.headers || {};
+            let res = await axios.get<any>(BRAND_PICKER_OPTION.brandUrl, headers);
             if (res.data.hasError) {
                 this.$message.error("获取车辆品牌数据,后台出错");
                 return;
@@ -172,5 +178,5 @@ export default class BrandSelector extends Component {
         this.curBrand = brand;
         this.visible = false;
     }
-    
+
 }

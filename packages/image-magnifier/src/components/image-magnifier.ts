@@ -1,4 +1,4 @@
-import { component, config, watch, Component } from "./decorator";
+import { component, config, watch, Component } from "../decorator";
 import "./image-magnifier.less";
 
 @component({
