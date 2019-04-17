@@ -19,7 +19,7 @@ cd d:/lerna-demo
 lerna init
 ```
 
-执行成功后，目录下将会生成这样的目录结构。
+执行成功后，目录下将会生成这样的目录结构。 
 
 ```bash
  - packages(目录)
