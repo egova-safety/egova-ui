@@ -1,0 +1,30 @@
+<div>
+    <template v-for="(item, index) in menuList">
+        <div style="text-align: center;" :key="index">
+            <i-dropdown transfer placement="right-start" :key="index" @on-click="changeMenu">
+                <i-button style="width:70px; margin-left:-5px; padding:10px 0;" type="text">
+                    <i-icon :size="20" :color="iconColor" :type="item.icon" :class="item.meta ? item.meta.class : ''"></i-icon>
+                </i-button>
+
+                <i-dropdownMenu style="width: 200px;" slot="list">
+                    <template v-if="singleMenu">
+                        <i-dropdownItem :name="item.name" >
+                            <i-icon :type="item.icon" :class="item.meta ? item.meta.class : ''"></i-icon>
+                            <span style="padding-left: 10px">{{itemTitle(item)}}</span>
+                        </i-dropdownItem>
+                    </template>
+                    <template v-else>
+                        <template v-for="(child, i) in item.children">
+                            <i-dropdownItem :name="child.name" :key="i" :class="child.meta ? child.meta.class : ''">
+                                <i-icon :type="child.icon" :class="child.meta ? child.meta.class : ''"></i-icon>
+                                <span style="padding-left: 10px">{{itemTitle(child)}}</span>
+                            </i-dropdownItem>
+                        </template>
+                    </template>
+
+                </i-dropdownMenu>
+            </i-dropdown>
+
+        </div>
+    </template>
+</div>

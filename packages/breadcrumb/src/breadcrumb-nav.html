@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<i-breadcrumb>
+    <i-breadcrumbItem 
+    v-for="item in currentPath"
+    :href="item.path"
+    :key="item.name">{{ itemTitle(item) }}</i-breadcrumbItem>
+</i-breadcrumb>
