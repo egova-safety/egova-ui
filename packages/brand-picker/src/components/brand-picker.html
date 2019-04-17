@@ -1,0 +1,37 @@
+
+    <div class="brand-selector">
+        <div class="opt">
+            <i-poptip v-model="visible" :placement="position" width="540">
+                <span class="ivu-input"  :style="btnStyleObj" style="line-height: 2.0">{{brandBtnText}}</span>
+
+                <div class="brand" slot="content">
+                    <div class="plate">
+                        <span :class="{active: activeBrandCharClassIndex === 0}"
+                            @click="activeBrandCharClassIndex = 0; setActiveBrandClass(['hot'])">热门品牌</span>
+                        <span :class="{active: activeBrandCharClassIndex === 1}"
+                            @click="activeBrandCharClassIndex = 1; setActiveBrandClass(['A', 'B', 'C', 'D'])">ABCD</span>
+                        <span :class="{active: activeBrandCharClassIndex === 2}"
+                            @click="activeBrandCharClassIndex = 2; setActiveBrandClass(['F', 'G', 'H', 'J'])">FGHJ</span>
+                        <span :class="{active: activeBrandCharClassIndex === 3}"
+                            @click="activeBrandCharClassIndex = 3; setActiveBrandClass(['K', 'L', 'M', 'N', 'O', 'P'])">KLMNOP</span>
+                        <span :class="{active: activeBrandCharClassIndex === 4}"
+                            @click="activeBrandCharClassIndex = 4; setActiveBrandClass(['Q', 'R', 'S', 'T'])">QRST</span>
+                        <span :class="{active: activeBrandCharClassIndex === 5}"
+                            @click="activeBrandCharClassIndex = 5; setActiveBrandClass(['U', 'W', 'X', 'Y', 'Z'])">UWXYZ</span>
+                        <a class="clear" @click.prevent.stop="onClearBrand">清除</a>
+                    </div>
+                    <div class="brand-name">
+                        <div class="brand-group" v-for="i in brandCharArr" v-if="i.active === true">
+                            <i-row :span="24" :gutter="8">
+                                <i-col :span="2" class="title">{{i.title}}:</i-col>
+                                <i-col :span="3" v-for="(brand, index) in i.data" class="name">
+                                    <a  @click.prevent.stop="onClickBrand(brand)">{{brand.name}}</a>
+                                </i-col>
+                            </i-row>
+                        </div>
+                    </div>
+                </div>
+            </i-poptip>
+
+        </div>
+    </div>
