@@ -1,6 +1,7 @@
 {
   "extends": "../tsconfig.settings.json",
   "compilerOptions": {
+	  "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo",
       "baseUrl": ".",
       "declaration": true,
       "declarationDir": "./dist/types",
