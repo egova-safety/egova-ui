@@ -1,6 +1,6 @@
 {
   "name": "@egova/ui-image-magnifier",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "types": "dist/types/index.d.ts",
   "main": "dist/index.umd.js",
   "publishConfig": {
