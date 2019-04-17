@@ -1,1 +1,2 @@
-export { default } from "./image-magnifier";
+import Magnifer from "./image-magnifier";
+export default Magnifer;

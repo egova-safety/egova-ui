@@ -1,1 +1,2 @@
-export { default } from "./components/collapse/collapse-menu";
+import Menu from "./components/collapse/collapse-menu";
+export default Menu;

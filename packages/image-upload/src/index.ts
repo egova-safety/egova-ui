@@ -1,1 +1,2 @@
-export { default } from "./upload";
+import ImageUpload from "./upload";
+export default ImageUpload;
