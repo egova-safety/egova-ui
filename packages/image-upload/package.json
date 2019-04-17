@@ -1,6 +1,6 @@
 {
   "name": "@egova/ui-image-upload",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "types": "dist/types/index.d.ts",
   "main": "dist/index.umd.js",
   "publishConfig": {
