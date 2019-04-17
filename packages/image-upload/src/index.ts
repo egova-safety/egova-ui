@@ -1,2 +1,2 @@
-import ImageUpload from "./upload";
+import ImageUpload from "./components/upload";
 export default ImageUpload;

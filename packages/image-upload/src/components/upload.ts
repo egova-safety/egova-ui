@@ -1,5 +1,4 @@
-import { component, Component, config, watch } from "./decorator";
-import Cookies from "js-cookie";
+import { component, Component, config, watch } from "../decorator";
 
 import "./upload.less";
 
@@ -7,6 +6,11 @@ import "./upload.less";
     template: require("./upload.html")
 })
 export default class Upload extends Component {
+
+    // 请求头
+    @config()
+    public headers: Object;
+
     // 上传组件的宽度
     @config({ default: "100%" })
     public width: String;
@@ -89,7 +93,7 @@ export default class Upload extends Component {
     }
     // 上传的请求头部
     public get uploadHeaders(): any {
-        return this.getHead();
+        return this.headers;
     }
     // 将上传成功后的url传给父页面
     public onUploadSuccess(): void {
@@ -104,14 +108,7 @@ export default class Upload extends Component {
         this.image.percentage = 0;
         this.$emit("upload-cancel");
     }
-    // 上传请求头部
-    public getHead(): any {
-        let token = Cookies.get("access_token");
-        let headers = {
-            Authorization: "Bearer " + token
-        };
-        return headers;
-    }
+ 
     // 返回携带的参数
     public get getDatas(): any {
         return this.data;

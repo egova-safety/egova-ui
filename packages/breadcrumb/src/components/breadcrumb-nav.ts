@@ -1,4 +1,4 @@
-import { component, config, Component } from "./decorator";
+import { component, config, Component } from "../decorator";
 
 @component({template: require("./breadcrumb-nav.html")})
 export default class BreadcrumbNav extends Component {
