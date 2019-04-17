@@ -51,7 +51,7 @@ lerna add iview -D --scope @egova/ui-image-upload
 4. 编译组件
 
 ```bash
-// 在所有的packages下都执行npm run dist
+// 在所有的packages下都执行npm run dist 
 lerna run dist
 // 只会在 @egova/ui-image-upload 下执行npm run dist
 lerna run dist --scope @egova/ui-image-upload

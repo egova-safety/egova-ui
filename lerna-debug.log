@@ -1,8 +1,9 @@
-0 silly argv { _: [ 'run' ],
-0 silly argv   lernaVersion: '3.13.1',
-0 silly argv   '$0':
-0 silly argv    'C:\\Users\\hbche\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js',
-0 silly argv   script: 'dist:clean' }
-1 notice cli v3.13.1
-2 verbose rootPath E:\Work\projects\egova\Git\egova-ui
-3 error
+66 error Error: Command failed: git push --follow-tags --no-verify origin master
+66 error fatal: TaskCanceledException encountered.
+66 error    ��ȡ��һ������
+66 error bash: /dev/tty: No such device or address
+66 error error: failed to execute prompt script (exit code 1)
+66 error fatal: could not read Username for 'https://github.com': No error
+66 error
+66 error     at makeError (C:\Users\hbche\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\index.js:174:9)
+66 error     at Promise.all.then.arr (C:\Users\hbche\AppData\Roaming\npm\node_modules\lerna\node_modules\execa\index.js:278:16)
