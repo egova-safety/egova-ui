@@ -7,6 +7,12 @@ import { Prop as config, Model as model, Watch as watch, Inject as inject, Provi
 import Vue from "vue";
 export { component, mixins, config, model, watch, inject, provide };
 
+import { Notice } from "iview";
 export class Component extends Vue {
+    /**
+     * 获取一个全局通知提醒实例。
+     * @returns Notice
+     */
+    protected readonly $notice: Notice;
 
 }

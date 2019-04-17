@@ -1,6 +1,6 @@
 import { BRAND_PICKER_OPTION } from "./brand-picker-options";
 import axios from "axios";
-import Cookies from "js-cookie";
+
 /**
  * service
  */
@@ -10,7 +10,6 @@ export default class Service {
      * @returns {Promise<any>}
      */
     public async getVehicleBrandList(): Promise<any> {
-        let token = Cookies.get("access_token");
-        return axios.get<any>(BRAND_PICKER_OPTION.brandUrl,{headers: {Authorization : "Bearer" + token}});
+        return axios.get<any>(BRAND_PICKER_OPTION.brandUrl);
     }
 }
