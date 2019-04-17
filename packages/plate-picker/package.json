@@ -1,6 +1,6 @@
 {
   "name": "@egova/ui-plate-picker",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "types": "dist/types/index.d.ts",
   "main": "dist/index.umd.js",
   "publishConfig": {
