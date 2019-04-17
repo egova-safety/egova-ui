@@ -64,7 +64,7 @@ lerna run dist --scope @egova/ui-image-upload
 * 设置仓库地址为npm官方仓库地址(国内大部分都使用阿里淘宝镜像，如果没改publish会失败)
 npm config set registry https://registry.npmjs.org/
 
-* 登陆npm,用户名密码邮箱需要全部匹配
+* 登陆npm,用户名密码邮箱需要全部匹配 
 
 ```bash
 npm login
