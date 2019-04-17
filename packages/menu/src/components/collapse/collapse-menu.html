@@ -1,0 +1,19 @@
+<div :style="{background: bgColor}" class="u-collapse-menu">
+    <slot name="top"></slot>
+    <u-sidebar-menu
+        v-show="!collapse"
+        :menu-theme="theme"
+        :menu-list="menuList"
+        :open-names="openNames"
+        :single-menu="single"
+        @on-change="handleChange"
+    ></u-sidebar-menu>
+    <u-sidebar-menu-collapse
+        v-show="collapse"
+        :menu-theme="theme"
+        :menu-list="menuList"
+        :single-menu="single"
+        :icon-color="collapseIconColor"
+        @on-change="handleChange"
+    ></u-sidebar-menu-collapse>
+</div>

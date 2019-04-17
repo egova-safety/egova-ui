@@ -1,0 +1,41 @@
+<i-menu ref="sideMenu" :active-name="active" :open-names="openNames" :theme="menuTheme" width="auto" @on-select="changeMenu">
+    <template v-if="singleMenu">
+        <template v-for="item in menuList" v-if="!(item.meta && item.meta.hide)">
+            <router-link :to="item.path">
+                <i-menuItem :name="item.name" :key="'menuitem' + item.name">
+                    <i-icon :type="item.icon" :size="iconSize" :key="'icon' + item.name" :class="item.meta ? item.meta.class : ''"></i-icon>
+                    <span class="layout-text" :key="'title' + item.name">{{item.title}}</span>
+                </i-menuItem>
+            </router-link>
+        </template>
+    </template>
+    <template v-else>
+        <template v-for="item in menuList">
+            <i-menuItem v-if="item.children.length === 0" :name="item.name" :key="'menuList' + item.name" :class="item.meta ? item.meta.class : ''">
+                <i-icon :type="item.icon" :size="iconSize" :key="'menuicon' + item.name"></i-icon>
+                <span class="layout-text" :key="'title' + item.name">{{itemTitle(item)}}</span>
+            </i-menuItem>
+            <i-menuItem v-if="item.children.length === 1 && (item.children[0].name === 'index' || item.meta && item.meta.single)" :name="item.children[0].name" :key="'menuList' + item.name">
+                <i-icon :type="item.icon" :size="iconSize" :key="'menuicon' + item.name" :class="item.meta ? item.meta.class : ''"></i-icon>
+
+                <span class="layout-text" :key="'title' + item.name">{{itemTitle(item)}}</span>
+            </i-menuItem>
+
+            <i-submenu v-if="item.children.length > 0 && (item.children[0].name!=='index' && item.meta && !item.meta.single)" :name="item.name" :key="item.name" :name1="item.name" >
+                <template slot="title">
+                    <i-icon :type="item.icon" :size="iconSize" :class="item.meta ? item.meta.class : ''"></i-icon>
+                    <span class="layout-text">{{ itemTitle(item) }}</span>
+                </template>
+
+                <template v-for="child in item.children" v-if="!(child.meta && child.meta.hide)" >
+                    <router-link :to=" item.path+ '/'+child.path">
+                        <i-menuItem :name="child.name" :key="'menuitem' + child.name" >
+                            <i-icon :type="child.icon" :size="iconSize" :key="'icon' + child.name" :class="child.meta ? child.meta.class : ''"></i-icon>
+                            <span class="layout-text" :key="'title' + child.name">{{itemTitle(child)}}</span>
+                        </i-menuItem>
+                    </router-link>
+                </template>
+            </i-submenu>
+        </template>
+    </template>
+</i-menu>
