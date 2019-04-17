@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "fae3");
+/******/ 	return __webpack_require__(__webpack_require__.s = "fb15");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -3504,7 +3504,7 @@ module.exports = document && document.documentElement;
 
 /***/ }),
 
-/***/ "fae3":
+/***/ "fb15":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4170,8 +4170,11 @@ function (_super) {
 /* harmony default export */ var collapse_collapse_menu = (collapse_menu_CollapseMenu);
 // CONCATENATED MODULE: ./src/index.ts
 
-// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib-no-default.js
+/* harmony default export */ var src = (collapse_collapse_menu);
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
+
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src);
 
 
 

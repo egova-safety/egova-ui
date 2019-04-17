@@ -7,5 +7,5 @@
  */
 import BrandPicker from "./brand-picker";
 import { BRAND_PICKER_OPTION } from "./brand-picker-options";
-export {BrandPicker,BRAND_PICKER_OPTION };
+export { BrandPicker, BRAND_PICKER_OPTION };
 export default BrandPicker;
