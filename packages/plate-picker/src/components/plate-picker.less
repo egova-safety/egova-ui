@@ -1,0 +1,125 @@
+.plate-picker{
+    .disabled{
+        .ivu-poptip-popper{
+            display: none;
+        }
+    }
+    .ivu-poptip{
+        display: inherit;
+        .ivu-poptip-rel{
+            display: inherit;
+        }
+    }
+    .ivu-poptip-body-content{
+        overflow: hidden;
+    }
+    .ivu-btn{
+        padding: 0;
+    }
+    .plate{
+        width:100%;
+        height: 285px;
+        background-color: #ffffff;
+        padding: 5px 5px 5px 0;
+        .vehicleType{
+            text-align: center;
+            button{
+                padding: 1px 7px;
+                border-radius: 3px;
+                color: #333;
+                background: #fff;
+                cursor: pointer;
+                border:1px solid #3c89fd;
+            }
+            button.active1{
+                background: #3dfdfb;
+                color: #FFF;
+                cursor: pointer;
+            }
+            button.active{
+                background: #3c89fd;
+                color: #FFF;
+                font-weight: bold;
+                cursor: default;
+            }
+            button.active2{
+                background: #FFFF00;
+                color: rgb(160, 80, 80);
+                font-weight: bold;
+                cursor: default;
+            }
+            button.active3{
+                background: #009688;
+                font-weight: bold;
+                cursor: default;
+            }
+            button.active4{
+                background: #8BC34A;
+                font-weight: bold;
+                cursor: default;
+            }
+        }
+        .plate-name{
+            width: 100%;
+            position: relative;
+            border-top: 1px solid #9bc2fc;
+            display: block;
+            margin-top: 5px;
+            .province{
+                height:135px;
+            }
+            .ivu-row{
+                .ivu-col{
+                    margin-top: 5px;
+                    button{
+                        display: inline-block;
+                        border: 1px solid #ddd;
+                        background: #fff;
+                        cursor: pointer;
+                        width:30px;
+                        height:22px;
+                        line-height:22px;
+                        text-align:center;
+                        vertical-align: middle;
+                    }
+                    button.active{
+                        background: #3c89fd;
+                        color: #FFF;
+                        cursor: pointer;
+                    }
+                    button.bordered{
+                        color: #FF0000;
+                        border: 1px solid #ff0000;
+                    }
+                    button.red{
+                        color: #FF0000;
+                    }
+                    button.yellow{
+                        color:rgb(117, 32, 32);
+                        background: #ffff00;
+                    }
+                }
+                .divide10{
+                    display: block;
+                    width: 10%;
+                    float: left;
+                    -webkit-box-flex: 0;
+                    -ms-flex: 0 0 auto;
+                    flex: 0 0 auto;
+                }
+                .divide5{
+                    display: block;
+                    width: 20%;
+                    float: left;
+                    -webkit-box-flex: 0;
+                    -ms-flex: 0 0 auto;
+                    flex: 0 0 auto;
+                }
+            }
+
+        }
+        .ivu-btn span{
+            color: #444444;
+        }
+    }
+}
