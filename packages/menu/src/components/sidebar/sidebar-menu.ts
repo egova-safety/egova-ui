@@ -5,24 +5,24 @@ import { component, Component, config, watch } from "../../decorator";
 })
 export default class SidebarMenu extends Component {
     @config({})
-    public menuList: Array<any>;
+    public menuList!: Array<any>;
 
     @config({})
-    public iconSize: Number;
+    public iconSize!: Number;
 
     @config({ default: "dark" })
-    public menuTheme: String;
+    public menuTheme!: String;
 
     @config({ default: (): Array<any> => [] })
-    public openNames: Array<any>;
+    public openNames!: Array<any>;
 
     @config({})
-    public singleMenu: Boolean;
+    public singleMenu!: Boolean;
 
     @config({})
-    public activeName: string;
+    public activeName!: string;
 
-    public active: string;
+    public active: string = "";
 
     public isOpened: boolean = false;
 
@@ -60,13 +60,13 @@ export default class SidebarMenu extends Component {
 
     public mounted() {
         let that = this;
-        let interval = setInterval(function() {
+        let interval = setTimeout(function() {
             if (!that.isOpened) {
                 that.updateOpenMenu(that);
             } else {
-                clearInterval(interval);
+                clearTimeout(interval);
             }
-        }, 1000);
+        }, 600);
     }
 
     public updateOpenMenu(that: any) {

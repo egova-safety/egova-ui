@@ -5,16 +5,16 @@ import { component, Component, config } from "../../decorator";
 })
 export default class SidebarMenuCollapse extends Component{
     @config({})
-    public menuList: Array<any>;
+    public menuList!: Array<any>;
 
     @config({default: "white"})
-    public iconColor: String;
+    public iconColor!: String;
 
     @config({default: "darck"})
-    public menuTheme: String;
+    public menuTheme!: String;
 
     @config({})
-    public singleMenu: Boolean;
+    public singleMenu!: Boolean;
 
     public changeMenu(active: any): void {
         this.$emit("on-change", active);

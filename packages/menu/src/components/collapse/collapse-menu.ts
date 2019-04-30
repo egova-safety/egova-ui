@@ -13,10 +13,10 @@ import { Util } from "../util";
 })
 export default class CollapseMenu extends Component {
     @config({ default: false })
-    public collapse: Boolean;
+    public collapse!: Boolean;
 
     @config({})
-    public menuList: Array<any>;
+    public menuList!: Array<any>;
 
     @config({
         default: "dark",
@@ -24,16 +24,16 @@ export default class CollapseMenu extends Component {
             return Util.oneOf(val, ["dark", "light"]);
         }
     })
-    public theme: String;
+    public theme!: String;
 
     @config({})
-    public beforePush: Function;
+    public beforePush!: Function;
 
     @config({})
-    public openNames: Array<any>;
+    public openNames!: Array<any>;
     // 菜单是否是单级菜单。默认是多级菜单
     @config({default: false})
-    public single: boolean;
+    public single!: boolean;
 
     public get bgColor(): String {
         return this.theme === "dark" ? "#495060" : "#fff";
