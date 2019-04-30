@@ -3815,6 +3815,7 @@ function (_super) {
   function SidebarMenu() {
     var _this = _super !== null && _super.apply(this, arguments) || this;
 
+    _this.active = "";
     _this.isOpened = false;
     return _this;
   }
@@ -3854,13 +3855,13 @@ function (_super) {
 
   SidebarMenu.prototype.mounted = function () {
     var that = this;
-    var interval = setInterval(function () {
+    var interval = setTimeout(function () {
       if (!that.isOpened) {
         that.updateOpenMenu(that);
       } else {
-        clearInterval(interval);
+        clearTimeout(interval);
       }
-    }, 1000);
+    }, 600);
   };
 
   SidebarMenu.prototype.updateOpenMenu = function (that) {
