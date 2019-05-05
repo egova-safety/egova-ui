@@ -7,11 +7,10 @@
     "access": "public"
   },
   "scripts": {
-    "lint": "vue-cli-service lint",
-    "dist": "npm run dist:clean && npm run dist:build && npm run dist:types",
-    "dist:build": "vue-cli-service build --target lib --name index src/index.ts",
-    "dist:clean": "node ./node_modules/rimraf/bin.js ./dist",
-    "dist:types": "tsc -d --emitDeclarationOnly --declarationDir dist/types"
+		"lint": "vue-cli-service lint",
+		"dist": "npm run dist:build && npm run dist:types",
+		"dist:build": "vue-cli-service build --target lib --name index src/index.ts",
+		"dist:types": "tsc -d --emitDeclarationOnly --declarationDir dist/types"
   },
   "peerDependencies": {
     "iview": "^3.4.0",
