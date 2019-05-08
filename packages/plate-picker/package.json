@@ -1,16 +1,16 @@
 {
   "name": "@egova/ui-plate-picker",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "types": "dist/types/index.d.ts",
   "main": "dist/index.umd.js",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-		"lint": "vue-cli-service lint",
-		"dist": "npm run dist:build && npm run dist:types",
-		"dist:build": "vue-cli-service build --target lib --name index src/index.ts",
-		"dist:types": "tsc -d --emitDeclarationOnly --declarationDir dist/types"
+    "lint": "vue-cli-service lint",
+    "dist": "npm run dist:build && npm run dist:types",
+    "dist:build": "vue-cli-service build --target lib --name index src/index.ts",
+    "dist:types": "tsc -d --emitDeclarationOnly --declarationDir dist/types"
   },
   "peerDependencies": {
     "iview": "^3.4.0",
