@@ -985,10 +985,14 @@ function (_super) {
 // EXTERNAL MODULE: E:/Work/projects/egova/Git/egova-ui/node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("ce9c");
 
+// EXTERNAL MODULE: E:/Work/projects/egova/Git/egova-ui/node_modules/core-js/modules/es6.array.index-of.js
+var es6_array_index_of = __webpack_require__("3e1f");
+
 // EXTERNAL MODULE: E:/Work/projects/egova/Git/egova-ui/node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("c880");
 
 // CONCATENATED MODULE: ./src/components/sidebar/sidebar-menu.ts
+
 
 
 
@@ -1074,14 +1078,24 @@ function (_super) {
 
     this.$nextTick(function () {
       if (_this.$refs.sideMenu) {
-        // this.$refs["sideMenu"].updateOpened();
-        // (<any>this.$refs.sideMenu).updateActiveName();
-        // this.$refs.sideMenu["activeName"] = (<any>this).$route.name;
-        _this.active = _this.$route.name;
-
-        _this.$forceUpdate();
+        // this.active = (<any>this).$route.name;
+        // this.$forceUpdate();
+        _this.setActiveName(_this.menuList, _this.$route.name);
       }
     });
+  };
+
+  SidebarMenu.prototype.setActiveName = function (menuList, name) {
+    for (var _i = 0, menuList_1 = menuList; _i < menuList_1.length; _i++) {
+      var menu = menuList_1[_i];
+      if (menu.name === name) this.active = name;else if (name.indexOf(menu.name) >= 0 && menu.name !== name) {
+        if (menu.children && menu.children.length) {
+          this.setActiveName(menu.children, name);
+        } else this.active = menu.name;
+      }
+    }
+
+    this.$forceUpdate();
   };
 
   SidebarMenu.prototype.mounted = function () {
@@ -1236,9 +1250,6 @@ function (_super) {
 /* harmony default export */ var sidebar_menu_collapse = (sidebar_menu_collapse_SidebarMenuCollapse);
 // EXTERNAL MODULE: ./src/components/collapse/collapse-menu.less
 var collapse_menu = __webpack_require__("a2f2");
-
-// EXTERNAL MODULE: E:/Work/projects/egova/Git/egova-ui/node_modules/core-js/modules/es6.array.index-of.js
-var es6_array_index_of = __webpack_require__("3e1f");
 
 // CONCATENATED MODULE: ./src/components/util.ts
 
