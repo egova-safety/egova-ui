@@ -48,7 +48,10 @@ module.exports = {
     },
     //调整 webpack 配置 https://cli.vuejs.org/zh/guide/webpack.html#%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F
     configureWebpack: config => {
-        config.externals= { "vue":"vue" }
+        config.externals = {
+            "vue": "vue",
+            "iview":"iview"
+        }
     },
     css: {
         // 启用 CSS modules
@@ -62,11 +65,11 @@ module.exports = {
             // sass: {
             //     //设置css中引用文件的路径，引入通用使用的scss文件（如包含的@mixin）
             //     data: `
-			// 	$baseUrl: "/";
+            // 	$baseUrl: "/";
             //     @import '@/assets/styles/common/_var.scss';
             //     @import '@/assets/styles/common/_mixin.scss';
             //     @import '@/assets/styles/common/_function.scss';
-			// 	`
+            // 	`
             // },
             less: {
                 javascriptEnabled: true
