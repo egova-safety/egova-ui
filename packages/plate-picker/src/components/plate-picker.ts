@@ -2,27 +2,31 @@ import { component, config, watch, Component } from "../decorator";
 
 import "./plate-picker.less";
 import { PLATE_PICKER_OPTION } from "./plate-picker-options";
+import iView from "iview";
 
 @component({
-  template: require("./plate-picker.html")
+  template: require("./plate-picker.html"),
+  components: {
+    "Row": iView["Row"], "Col": iView["Col"], "Button": iView["Button"], "Icon": iView["Icon"], "Input": iView["Input"], "Poptip": iView["Poptip"]
+  }
 })
 export default class PlatePicker extends Component {
-  @config({ default: function() {return new Object();} })
+  @config({ default: function () { return new Object(); } })
   public btnStyleObj: Object;
 
   @config({ default: PLATE_PICKER_OPTION.defaultProvince })
   public defaultProvince: String;
 
-  @config({ default: PLATE_PICKER_OPTION.place})
+  @config({ default: PLATE_PICKER_OPTION.place })
   public place: String;
   // 隐藏号码号牌选择项
   @config({ default: true })
   public hidePlateType: boolean;
   // 是否禁用
-  @config({default: false})
+  @config({ default: false })
   public disabled: boolean;
   // 是否已枚举的方式取值，如果为true，则返回的type和设置的type值为“Car” 这种形式，如果为false，则为01这种形式
-  @config({default: true})
+  @config({ default: true })
   public enums: boolean;
 
   public values: Array<string> = this.enums ? ["Car", "LargeCar", "NewEnergyLargeCar", "NewEnergyCar"] : ["02", "01", "51", "52"];

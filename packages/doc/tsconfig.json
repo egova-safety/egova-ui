@@ -1,0 +1,33 @@
+{
+  "extends": "../tsconfig.settings.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "outDir": "dist",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["types/*"],
+      "@s/*": ["src/*"]
+    }
+  },
+  "references": [
+    {
+      "path": "../brand-picker"
+    },
+    {
+      "path": "../breadcrumb"
+    },
+    {
+      "path": "../image-magnifier"
+    },
+    {
+      "path": "../image-upload"
+    },
+    {
+      "path": "../menu"
+    },
+    {
+      "path": "../plate-picker"
+    }
+  ]
+}

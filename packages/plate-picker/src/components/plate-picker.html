@@ -1,18 +1,18 @@
 <div class="plate-picker">
     <div>
-        <i-poptip v-model="visible" :placement="place" width="400" :class="{'disabled':disabled}">
-            <i-input v-model="plateNo" :disabled="disabled"  :style="btnStyleObj" :placeholder="hidePlateType?'请选择号牌和号牌类型':'请选择号牌号码'">
+        <Poptip v-model="visible" :placement="place" width="400" :class="{'disabled':disabled}">
+            <Input v-model="plateNo" :disabled="disabled"  :style="btnStyleObj" :placeholder="hidePlateType?'请选择号牌和号牌类型':'请选择号牌号码'">
 				<slot name="prepend"></slot>
-			</i-input>
+			</Input>
 
             <div class="plate" slot="content">
                 <div class="vehicleType" v-if="hidePlateType">
                     <label>请选择车牌类型: </label>
-                    <i-button shape="circle" size="small" :class="{active1: activePlateIndex === ''}" @click="activePlateIndex = ''">不限</i-button>
-                    <i-button shape="circle" size="small" :class="{active: activePlateIndex === values[0]}" @click="changeType(0)">小车</i-button>
-                    <i-button shape="circle" size="small" :class="{active2: activePlateIndex === values[1]}" @click="changeType(1)">大车</i-button>
-                    <i-button shape="circle" size="small" :class="{active3: activePlateIndex === values[2]}" @click="changeType(2)">大新能源</i-button>
-                    <i-button shape="circle" size="small" :class="{active4: activePlateIndex === values[3]}" @click="changeType(3)">小新能源</i-button>
+                    <Button shape="circle" size="small" :class="{active1: activePlateIndex === ''}" @click="activePlateIndex = ''">不限</Button>
+                    <Button shape="circle" size="small" :class="{active: activePlateIndex === values[0]}" @click="changeType(0)">小车</Button>
+                    <Button shape="circle" size="small" :class="{active2: activePlateIndex === values[1]}" @click="changeType(1)">大车</Button>
+                    <Button shape="circle" size="small" :class="{active3: activePlateIndex === values[2]}" @click="changeType(2)">大新能源</Button>
+                    <Button shape="circle" size="small" :class="{active4: activePlateIndex === values[3]}" @click="changeType(3)">小新能源</Button>
                 </div>
                 <div class="vehicleType" v-else>
                     <label>请选择号码</label>
@@ -20,38 +20,38 @@
 
                 <div class="plate-name">
                     <div class="province">
-                        <i-row :span="24" :gutter="6">
-                            <i-col class="divide10" v-for="(item,index) in getProvinceList" :key="index">
-                                <i-button @click="selectedPlate(item, '0')" :class="{active: plateNo.indexOf(item) > -1, red: special.indexOf(item) > -1, yellow: (plateNo.indexOf(item) > -1 && yellowplate.indexOf(item) > -1)}">{{item}}</i-button>
-                            </i-col>
-                        </i-row>
+                        <Row :span="24" :gutter="6">
+                            <Col class="divide10" v-for="(item,index) in getProvinceList" :key="index">
+                                <Button @click="selectedPlate(item, '0')" :class="{active: plateNo.indexOf(item) > -1, red: special.indexOf(item) > -1, yellow: (plateNo.indexOf(item) > -1 && yellowplate.indexOf(item) > -1)}">{{item}}</Button>
+                            </Col>
+                        </Row>
                     </div>
 
                     <div style="height:110px;">
-                        <i-row :span="24" :gutter="6">
-                            <i-col class="divide10" v-for="(item,index) in wordList" :key="index">
-                                <i-button @click="selectedPlate(item, '1')" :class="{active: (plateNo.indexOf(item) > -1)}">{{item}}</i-button>
-                            </i-col>
+                        <Row :span="24" :gutter="6">
+                            <Col class="divide10" v-for="(item,index) in wordList" :key="index">
+                                <Button @click="selectedPlate(item, '1')" :class="{active: (plateNo.indexOf(item) > -1)}">{{item}}</Button>
+                            </Col>
 
-                            <i-col class="divide10">
-                                <i-button @click="trash()">
-                                    <i-icon type="ios-trash-outline" size="18"></i-icon>
-                                </i-button>
-                            </i-col>
-                            <i-col class="divide10">
-                                <i-button @click="del()">
-                                    <i-icon type="ios-arrow-back" size="18"></i-icon>
-                                </i-button>
-                            </i-col>
-                            <i-col class="divide5">
-                                <i-button @click="submit()" style="width: 100%;background:#f7f7f7">确定</i-button>
-                            </i-col>
-                        </i-row>
+                            <Col class="divide10">
+                                <Button @click="trash()">
+                                    <Icon type="ios-trash-outline" size="18"></Icon>
+                                </Button>
+                            </Col>
+                            <Col class="divide10">
+                                <Button @click="del()">
+                                    <Icon type="ios-arrow-back" size="18"></Icon>
+                                </Button>
+                            </Col>
+                            <Col class="divide5">
+                                <Button @click="submit()" style="width: 100%;background:#f7f7f7">确定</Button>
+                            </Col>
+                        </Row>
                     </div>
 
                 </div>
             </div>
-        </i-poptip>
+        </Poptip>
     </div>
 
 </div>
