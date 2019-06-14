@@ -6,6 +6,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist"
+],
   "scripts": {
     "lint": "vue-cli-service lint",
     "dist": "npm run dist:build && npm run dist:types",
