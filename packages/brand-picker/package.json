@@ -1,14 +1,14 @@
 {
 	"name": "@egova/ui-brand-picker",
-	"version": "0.0.14",
+	"version": "0.0.15",
 	"types": "dist/types/index.d.ts",
 	"main": "dist/index.umd.js",
 	"publishConfig": {
 		"access": "public"
 	},
 	"files": [
-        "dist"
-    ],
+		"dist"
+	],
 	"scripts": {
 		"lint": "vue-cli-service lint",
 		"dist": "npm run dist:build && npm run dist:types",
