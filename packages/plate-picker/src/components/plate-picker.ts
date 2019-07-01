@@ -63,6 +63,8 @@ export default class PlatePicker extends Component {
 
   public activePlateIndex: String = "";
 
+  public isNullPlateNo: boolean = false;
+
   public plate: Array<Object> = [];
   public get special(): String {
     return "军空警";
@@ -147,5 +149,12 @@ export default class PlatePicker extends Component {
   }
   public changeType(index: number) {
     this.activePlateIndex = this.values[index];
+  }
+
+  public onSetNullPlateNo() {
+    this.isNullPlateNo = !this.isNullPlateNo;
+    if (this.isNullPlateNo) {
+      this.plateNo = "--------";
+    } else this.plateNo = "";
   }
 }
