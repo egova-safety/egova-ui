@@ -1,6 +1,6 @@
 {
   "name": "@egova/ui-breadcrumb",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "types": "dist/types/index.d.ts",
   "main": "dist/index.umd.js",
   "publishConfig": {
