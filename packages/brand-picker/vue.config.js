@@ -50,6 +50,8 @@ module.exports = {
     configureWebpack: config => {
         config.externals = {
             "vue": "vue",
+            "vue-class-component": "vue-class-component",
+            "vue-property-decorator": "vue-property-decorator",
             "axios": "axios",
             "iview": "iview"
         }

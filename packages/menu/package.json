@@ -1,11 +1,14 @@
 {
   "name": "@egova/ui-menu",
-  "version": "0.0.14",
+  "version": "0.0.16",
   "types": "dist/types/index.d.ts",
   "main": "dist/index.umd.js",
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "vue-cli-service lint",
     "dist": "npm run dist:build && npm run dist:types",
@@ -13,9 +16,9 @@
     "dist:types": "tsc -d --emitDeclarationOnly --declarationDir dist/types"
   },
   "peerDependencies": {
-    "vue": "^2.6.7",
-    "vue-class-component": "^7.0.1",
-    "vue-property-decorator": "^7.3.0"
+    "vue": ">=2.6.10",
+    "vue-class-component": ">=7.1.0",
+    "vue-property-decorator": ">=8.1.1"
   },
   "devDependencies": {
     "@types/lodash.debounce": "^4.0.5",
@@ -42,9 +45,9 @@
     "tslint-loader": "^3.5.4",
     "typedoc": "^0.14.2",
     "typescript": "^3.4.3",
-    "vue": "^2.6.7",
-    "vue-class-component": "^7.0.1",
-    "vue-property-decorator": "^7.3.0",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.1.0",
+    "vue-property-decorator": "^8.1.1",
     "vue-template-compiler": "^2.5.21"
   }
 }

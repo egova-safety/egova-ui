@@ -1,6 +1,6 @@
 {
   "name": "@egova/ui-doc",
-  "version": "0.0.14",
+  "version": "0.0.16",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -10,7 +10,7 @@
   "dependencies": {
     "@egova/flagwind-core": "^1.1.2",
     "@egova/flagwind-web": "^1.0.20",
-    "@egova/ui-plate-picker": "^0.0.14",
+    "@egova/ui-plate-picker": "^0.0.16",
     "axios": "^0.18.0",
     "clipboard": "^2.0.4",
     "equals": "^1.0.5",
