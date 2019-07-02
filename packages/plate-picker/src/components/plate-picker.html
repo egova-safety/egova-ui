@@ -14,8 +14,9 @@
                     <Button shape="circle" size="small" :class="{active3: activePlateIndex === values[2]}" @click="changeType(2)">大新能源</Button>
                     <Button shape="circle" size="small" :class="{active4: activePlateIndex === values[3]}" @click="changeType(3)">小新能源</Button>
                 </div>
-                <div class="vehicleType" v-else>
+                <div class="vehicleType btnRight" v-else>
                     <label>请选择号码</label>
+                    <Button shape="circle" size="small" :class="{active: isNullPlateNo}" @click="onSetNullPlateNo">无车牌</Button>
                 </div>
 
                 <div class="plate-name">
