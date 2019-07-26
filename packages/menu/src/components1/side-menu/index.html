@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<div class="side-menu-wrapper">
+    <slot></slot>
+    <i-menu ref="menu" v-show="!collapsed" :active-name="activeName" :open-names="openedNames" :accordion="accordion"
+        :theme="theme" width="auto" @on-select="handleSelect">
+        <template v-for="(item,i) in menuList">
+            <template v-if="item.children && item.children.length === 1">
+                <side-menu-item  :key="`menu-${item.name}`" :parent-item="item">
+                </side-menu-item>
+                <i-menu-item v-else :name="getNameOrHref(item,true)" :key="`menu-${item.children[0].name}`">
+                    <i-icon :type="item.children[0].icon || ''" :class="item.children[0].meta ? item.children[0].meta.class : ''"></i-icon>
+                    <span>{{showTitle(item.children[0])}}</span>
+                </i-menu-item>
+            </template>
+            <template v-else>
+                <side-menu-item v-if="showChildren(item)" :key="`menu-${item.name}`" :parent-item="item">
+                </side-menu-item>
+                <i-menu-item v-else :name="getNameOrHref(item)" :key="`menu-${item.name}`">
+                    <i-icon :type="item.icon || ''" :class="item.meta ? item.meta.class : ''"></i-icon>
+                    <span>{{showTitle(item)}}</span>
+                </i-menu-item>
+            </template>
+        </template>
+    </i-menu>
+
+    <div class="menu-collapsed" v-show="collapsed" :list="menuList">
+        <template v-for="(item,i) in menuList">
+            <collapsed-menu v-if="item.children && item.children.length > 1" @on-click="handleSelect" hide-title
+                :root-icon-size="rootIconSize" :icon-size="iconSize" :theme="theme" :parent-item="item"
+                :key="`drop-menu-${item.name}`"></collapsed-menu>
+            <i-tooltip transfer v-else :content="showTitle(item.children && item.children[0] ? item.children[0]: item)"
+                placement="right" :key="`drop-menu-${item.name}`">
+                <a @click.stop="handleSelect(getNameOrHref(item, true))" class="drop-menu-a" :style="{textAlign: 'center'}">
+                    <i-icon :size="rootIconSize" :color="textColor"  :type="item.icon || (item.children && item.children[0].icon)" :class="item.children[0].meta ? item.children[0].meta.class : ''"></i-icon>
+                </a>
+            </i-tooltip>
+        </template>
+    </div>
+</div>

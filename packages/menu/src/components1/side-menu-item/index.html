@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<i-submenu :name="`${parentName}`">
+    <template slot="title">
+        <i-icon :type="parentItem.icon ||''" :class="parentItem.meta ? parentItem.meta.class : ''"></i-icon>
+        <span>{{showTitle(parentItem)}}</span>
+    </template>
+
+    <template v-for="(item,index) in children">
+        <template v-if="item.children && item.children.length === 1">
+            <side-menu-item v-if="showChildren(item)" :key="`menu-${item.name}`" :parent-item="item"></side-menu-item>
+            <i-menu-item v-else :name="getNameOrHref(item, true)" :key="`menu-${item.children[0].name}`">
+                <i-icon :type="item.children[0].icon || ''"
+                    :class="item.children[0].meta ? item.children[0].meta.class : ''"></i-icon>
+                <span>{{showTitle(item.children[0])}}</span>
+            </i-menu-item>
+        </template>
+
+        <template v-else>
+            <side-menu-item v-if="showChildren(item)" :key="`menu-${item.name}`" :parent-item="item"></side-menu-item>
+            <i-menu-item v-else :name="getNameOrHref(item)" :key="`menu-${item.name}`">
+                <i-icon :type="item.icon || ''" :class="item.meta ? item.meta.class : ''"></i-icon>
+                <span>{{showTitle(item)}}</span>
+            </i-menu-item>
+        </template>
+    </template>
+</i-submenu>
