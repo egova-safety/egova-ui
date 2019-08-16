@@ -12,22 +12,26 @@ import iView from "iview";
 })
 export default class PlatePicker extends Component {
   @config({ default: function () { return new Object(); } })
-  public btnStyleObj: Object;
+  public btnStyleObj!: any;
 
   @config({ default: PLATE_PICKER_OPTION.defaultProvince })
-  public defaultProvince: String;
+  public defaultProvince!: String;
 
   @config({ default: PLATE_PICKER_OPTION.place })
-  public place: String;
+  public place!: String;
   // 隐藏号码号牌选择项
-  @config({ default: true })
-  public hidePlateType: boolean;
+  @config({ type: Boolean, default: true })
+  public hidePlateType!: boolean;
   // 是否禁用
-  @config({ default: false })
-  public disabled: boolean;
+  @config({ type: Boolean, default: false })
+  public disabled!: boolean;
   // 是否已枚举的方式取值，如果为true，则返回的type和设置的type值为“Car” 这种形式，如果为false，则为01这种形式
-  @config({ default: true })
-  public enums: boolean;
+  @config({ type: Boolean, default: true })
+  public enums!: boolean;
+
+  // 父组件直接 :show-null-plate-button="true"
+  @config({ type: Boolean, default: false })
+  public showNullPlateButton!: boolean;
 
   public values: Array<string> = this.enums ? ["Car", "LargeCar", "NewEnergyLargeCar", "NewEnergyCar"] : ["02", "01", "51", "52"];
 
@@ -66,12 +70,15 @@ export default class PlatePicker extends Component {
   public isNullPlateNo: boolean = false;
 
   public plate: Array<Object> = [];
+
   public get special(): String {
     return "军空警";
   }
+
   public get yellowplate(): String {
     return "学挂";
   }
+
   public get getProvinceList(): Array<Object> {
     let list = [];
     list.push(this.defaultProvince);
@@ -143,10 +150,12 @@ export default class PlatePicker extends Component {
       this.activePlateIndex = "";
     }
   }
+
   public reset() {
     this.plateNo = "";
     this.activePlateIndex = "";
   }
+
   public changeType(index: number) {
     this.activePlateIndex = this.values[index];
   }

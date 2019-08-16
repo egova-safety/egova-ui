@@ -16,7 +16,7 @@
                 </div>
                 <div class="vehicleType btnRight" v-else>
                     <label>请选择号码</label>
-                    <Button shape="circle" size="small" :class="{active: isNullPlateNo}" @click="onSetNullPlateNo">无车牌</Button>
+                    <Button shape="circle" size="small" :class="{active: isNullPlateNo}" @click="onSetNullPlateNo" v-if="showNullPlateButton">无车牌</Button>
                 </div>
 
                 <div class="plate-name">
