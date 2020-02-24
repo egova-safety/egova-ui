@@ -53,7 +53,7 @@ module.exports = {
             "vue-class-component": "vue-class-component",
             "vue-property-decorator": "vue-property-decorator",
             "axios": "axios",
-            "iview": "iview"
+            "view-design": "view-design"
         }
     },
     css: {
