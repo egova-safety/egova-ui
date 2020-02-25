@@ -2,7 +2,7 @@ import { component, config, watch, Component } from "../decorator";
 
 import "./plate-picker.less";
 import { PLATE_PICKER_OPTION } from "./plate-picker-options";
-import iView from "iview";
+import iView from "view-design";
 
 @component({
   template: require("./plate-picker.html"),

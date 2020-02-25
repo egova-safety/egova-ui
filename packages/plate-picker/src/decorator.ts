@@ -7,7 +7,7 @@ import { Prop as config, Model as model, Watch as watch, Inject as inject, Provi
 import Vue from "vue";
 export { component, mixins, config, model, watch, inject, provide };
 
-import iview, { Notice, Message } from "iview";
+import iview, { Notice, Message } from "view-design";
 const components: any = iview;
 export class Component extends Vue {
     /**
