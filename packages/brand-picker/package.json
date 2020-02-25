@@ -1,6 +1,6 @@
 {
   "name": "@egova/ui-brand-picker",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "types": "dist/types/index.d.ts",
   "main": "dist/index.umd.js",
   "publishConfig": {
