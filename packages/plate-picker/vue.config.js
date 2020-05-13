@@ -28,7 +28,9 @@ module.exports = {
 
         // 以便支持 @component({ template: require("./index.html") }) 这种模版加载方式
         // 注意：写include和exclude要在use和loader之前写
-        config.module.rule('html').test(/\.html$/).exclude.add(/public/).end().use('raw-loader').loader('raw-loader');
+        config.module.rule('html').test(/\.html$/).exclude.add(/public/).end().use('raw-loader').options({
+            esModule: false
+        }).loader('raw-loader');
 
         // 只输出src下ts文件错误
         // config.plugin('fork-ts-checker').tap(args => {
@@ -52,7 +54,7 @@ module.exports = {
             "vue": "vue",
             "vue-class-component": "vue-class-component",
             "vue-property-decorator": "vue-property-decorator",
-            "iview": "iview"
+            "view-design": "view-design"
         }
     },
     css: {
